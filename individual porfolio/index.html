@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>黎心悦｜个人网站</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; }
+
+    .玻璃卡 {
+      background: rgba(255,255,255,.66);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245,158,11,.20);
+      box-shadow: 0 12px 36px rgba(245,158,11,.12);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .玻璃卡:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(245,158,11,.18);
+    }
+
+    .柔光背景::before,.柔光背景::after{
+      content:""; position:absolute; border-radius:9999px; filter: blur(60px); pointer-events:none;
+    }
+    .柔光背景::before{ width:360px;height:360px;left:-100px;top:-90px;background: rgba(251,191,36,.30);}
+    .柔光背景::after{ width:280px;height:280px;right:-80px;top:160px;background: rgba(253,230,138,.35);}
+
+    .按钮主 {
+      background: linear-gradient(135deg,#facc15,#f59e0b);
+      box-shadow: 0 8px 20px rgba(245,158,11,.28);
+    }
+    .按钮主:hover { transform: translateY(-1px); }
+
+    .经历按钮激活 { background: #fbbf24; color: #78350f; font-weight: 700; }
+    .淡入 { animation: 淡入 .35s ease; }
+    @keyframes 淡入 { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+
+    @keyframes 轻上浮 {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes 慢呼吸 {
+      0%,100% { transform: scale(1); opacity: .9; }
+      50% { transform: scale(1.03); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-amber-50 via-yellow-50/40 to-white text-amber-950">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 border-b border-amber-200/60 bg-white/70 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-amber-400 text-amber-950 text-sm font-bold">黎</span>
+        <span class="text-base md:text-lg font-extrabold tracking-wide text-amber-900">黎心悦</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm text-amber-800">
+        <a href="#首页" class="hover:text-amber-500">首页</a>
+        <a href="#教育荣誉" class="hover:text-amber-500">教育荣誉</a>
+        <a href="#实习经历" class="hover:text-amber-500">实习经历</a>
+        <a href="#技能项目" class="hover:text-amber-500">技能项目</a>
+        <a href="#联系我" class="hover:text-amber-500">联系我</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 首页 -->
+  <section id="首页" class="柔光背景 relative max-w-6xl mx-auto px-4 md:px-8 pt-14 md:pt-20 pb-12">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center rounded-full border border-amber-300 bg-white/70 px-4 py-1 text-sm text-amber-800">
+          27届港硕应届生
+        </div>
+
+        <div>
+          <h1 class="text-5xl md:text-6xl font-black tracking-tight text-amber-950">黎心悦</h1>
+          <p class="mt-3 text-2xl font-bold bg-gradient-to-r from-amber-500 to-amber-700 bg-clip-text text-transparent">会计与金融分析</p>
+          <p class="mt-2 text-amber-700 text-lg">审计与量化分析</p>
+        </div>
+
+        <p class="max-w-xl leading-8 text-amber-900/85 text-[17px]">
+          香港理工大学硕士在读，专注财务数据分析、审计底稿编制与 Python 量化建模。
+          具备扎实的 ACCA 专业基础与丰富的事务所实践经验，能够将数据清洗、可视化看板与经营分析结合落地。
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <!-- 你的简历文件名：cindy.pdf（与本html同目录） -->
+          <a href="./cindy.pdf" target="_blank" rel="noopener noreferrer" class="按钮主 transition px-5 py-3 rounded-xl text-amber-950 font-bold">
+            下载简历
+          </a>
+          <a href="#联系我" class="玻璃卡 px-5 py-3 rounded-xl text-amber-900 font-medium hover:bg-white/80 transition">
+            联系我
+          </a>
+        </div>
+      </div>
+
+      <!-- 大圆形头像 -->
+      <aside class="玻璃卡 rounded-3xl p-6 md:p-7">
+        <div class="mx-auto relative w-[360px] h-[360px] max-w-full" style="animation: 轻上浮 4s ease-in-out infinite;">
+          <span class="absolute inset-0 rounded-full bg-amber-200/25 blur-2xl" style="animation: 慢呼吸 4s ease-in-out infinite;"></span>
+          <span class="absolute inset-0 rounded-full border-2 border-amber-200/90"></span>
+          <span class="absolute inset-[14px] rounded-full border border-amber-300/80"></span>
+          <span class="absolute inset-[28px] rounded-full border border-amber-200/70"></span>
+          <div class="absolute inset-[42px] rounded-full border-[5px] border-amber-200 p-2 bg-white shadow-[0_18px_36px_rgba(245,158,11,0.20)]">
+            <img src="./profile.jpg" alt="个人照片" class="w-full h-full object-cover rounded-full"
+                 onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop';">
+          </div>
+        </div>
+
+        <div class="mt-5 space-y-3 text-sm">
+          <div class="rounded-xl bg-amber-50 p-3 flex items-center justify-between">
+            <span class="text-amber-700">专业方向</span><span class="font-semibold text-amber-900">会计与金融分析</span>
+          </div>
+          <div class="rounded-xl bg-amber-50 p-3 flex items-center justify-between">
+            <span class="text-amber-700">专业资质</span><span class="font-semibold text-amber-900">ACCA（10/13）</span>
+          </div>
+          <div class="rounded-xl bg-amber-50 p-3 flex items-center justify-between">
+            <span class="text-amber-700">职业证书</span><span class="font-semibold text-amber-900">初级会计师</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 教育荣誉 -->
+  <section id="教育荣誉" class="max-w-6xl mx-auto px-4 md:px-8 py-14">
+    <h2 class="text-2xl md:text-3xl font-bold text-amber-900 mb-8">教育荣誉</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="relative border-l-2 border-amber-300 pl-6">
+        <article class="relative mb-8">
+          <span class="absolute -left-[34px] top-1 h-4 w-4 rounded-full border-2 border-amber-500 bg-amber-200"></span>
+          <h3 class="font-semibold text-lg text-amber-900">香港理工大学｜硕士｜会计与金融分析</h3>
+          <p class="text-sm text-amber-700 mb-2">2025.09 - 2026.11</p>
+          <p class="leading-7 text-amber-900/85">
+            1. 运用 Python进行财务数据清洗、指标计算与建模分析，独立完成财务比率分析、现金流测算、投资组合收益与风险回测等量化分析任务，可基于 Power BI 搭建财务可视化看板，实现经营数据动态展示与商业决策支持。<br>
+            2. 系统掌握 ERP 核心业务流程，深入学习AI+财会应用，估值模型、证券分析、资产配置、风险管理及组合优化等实操技能。
+          </p>
+        </article>
+        <article class="relative">
+          <span class="absolute -left-[34px] top-1 h-4 w-4 rounded-full border-2 border-amber-500 bg-amber-200"></span>
+          <h3 class="font-semibold text-lg text-amber-900">华南农业大学｜本科｜会计学（ACCA）</h3>
+          <p class="text-sm text-amber-700 mb-2">2020.09 - 2024.06</p>
+          <p class="text-amber-900/85">GPA 4.33/5，校级一等奖学金，优秀学生标兵。</p>
+        </article>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="玻璃卡 rounded-2xl p-4">华南农业大学校级一等奖学金</div>
+        <div class="玻璃卡 rounded-2xl p-4">优秀学生标兵</div>
+        <div class="玻璃卡 rounded-2xl p-4">“丁颖杯”发明创意大赛 C 类三等奖</div>
+        <div class="玻璃卡 rounded-2xl p-4">国家级大创项目顺利结项</div>
+        <div class="玻璃卡 rounded-2xl p-4 sm:col-span-2">2022“创新创业”全国管理决策模拟大赛 全国总决赛三等奖</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 实习经历 -->
+  <section id="实习经历" class="max-w-6xl mx-auto px-4 md:px-8 py-14">
+    <h2 class="text-2xl md:text-3xl font-bold text-amber-900 mb-6">实习经历</h2>
+    <div class="flex flex-wrap gap-2 mb-5">
+      <button class="经历按钮 经历按钮激活 rounded-full px-4 py-2 text-sm" data-key="zh">中审众环会计师事务所</button>
+      <button class="经历按钮 玻璃卡 rounded-full px-4 py-2 text-sm" data-key="sn">司农会计师事务所</button>
+      <button class="经历按钮 玻璃卡 rounded-full px-4 py-2 text-sm" data-key="zs">招商证券</button>
+      <button class="经历按钮 玻璃卡 rounded-full px-4 py-2 text-sm" data-key="xn">华南农业大学经济管理学院</button>
+    </div>
+    <div id="经历内容" class="玻璃卡 rounded-2xl p-6"></div>
+  </section>
+
+  <!-- 技能项目 -->
+  <section id="技能项目" class="max-w-6xl mx-auto px-4 md:px-8 py-14">
+    <h2 class="text-2xl md:text-3xl font-bold text-amber-900 mb-6">技能项目</h2>
+
+    <!-- 上排 -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="玻璃卡 rounded-2xl p-6">
+        <h3 class="text-lg font-semibold mb-5">技能熟练度</h3>
+        <div class="space-y-4">
+          <div><div class="mb-1 flex justify-between text-sm"><span>Python（数据清洗/建模）</span><span>88%</span></div><div class="h-2 bg-amber-100 rounded-full"><div class="h-2 bg-amber-400 rounded-full w-[88%]"></div></div></div>
+          <div><div class="mb-1 flex justify-between text-sm"><span>Excel（高级函数/Kutools）</span><span>95%</span></div><div class="h-2 bg-amber-100 rounded-full"><div class="h-2 bg-amber-400 rounded-full w-[95%]"></div></div></div>
+          <div><div class="mb-1 flex justify-between text-sm"><span>Power BI（可视化看板）</span><span>84%</span></div><div class="h-2 bg-amber-100 rounded-full"><div class="h-2 bg-amber-400 rounded-full w-[84%]"></div></div></div>
+          <div><div class="mb-1 flex justify-between text-sm"><span>SQL</span><span>80%</span></div><div class="h-2 bg-amber-100 rounded-full"><div class="h-2 bg-amber-400 rounded-full w-[80%]"></div></div></div>
+        </div>
+      </div>
+
+      <article class="玻璃卡 rounded-2xl p-6">
+        <h3 class="font-semibold text-lg mb-2">国家级大创项目｜负责人（2022.04 - 2023.11）</h3>
+        <p class="leading-7 text-amber-900/85">
+          1. 资源对接与技术推广：对接校内农业技术公益团队与资环学院教授，促成与孙少龙教授的专利技术合作，完成青年创业企业的技术试应用；同时通过三下乡大学生实践活动向农户推广技术，收集农户接受度反馈并为技术落地提供数据支撑。<br>
+          2. 项目运营与成果输出：牵头撰写项目申报书与商业计划书，落实高校农业技术的推广工作，推动高校农业技术小程序的落实工作，高效推进立项目标落地；项目获“丁颖杯”发明创意大赛 C 类三等奖，于2023年答辩并顺利通过国家级结项。
+        </p>
+      </article>
+    </div>
+
+    <!-- 下排：竞赛荣誉左右对称 -->
+    <div class="mt-6">
+      <h3 class="text-lg font-semibold text-amber-900 mb-4">竞赛荣誉</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="玻璃卡 rounded-2xl p-6 h-full">
+          <p class="font-semibold text-amber-900">
+            2022“创新创业”全国管理决策模拟大赛｜全国总决赛三等奖｜主要负责人
+            <span class="text-sm font-normal text-amber-700">（2022.03 - 2022.05）</span>
+          </p>
+          <p class="mt-2 text-amber-900/85 leading-7">
+            职责：主导模拟制造业企业全流程模拟经营决策，负责财务预测模型搭建、成本管控和现金流规划。同时，基于模拟市场数据与业务节奏，制定统筹研发、生产、定价与营销投放策略，通过多轮测算优化利润结构和提高资金周转率。
+          </p>
+        </article>
+
+        <article class="玻璃卡 rounded-2xl p-6 h-full">
+          <p class="font-semibold text-amber-900">
+            企业模拟经营大赛｜广东省三等奖｜主要负责人
+            <span class="text-sm font-normal text-amber-700">（2021.10 - 2022.03）</span>
+          </p>
+          <p class="mt-2 text-amber-900/85 leading-7">
+            职责：负责模拟企业财务报表测算、成本管控与经营数据分析，搭建盈利预测模型并监控运营周期现金流，确保企业流水始终保持健康水平；结合模拟的市场供需与竞争，主导产品类型选择、生产排期优化以及定价策略调整等工作。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我 -->
+  <section id="联系我" class="max-w-6xl mx-auto px-4 md:px-8 pt-12 pb-20">
+    <div class="玻璃卡 rounded-3xl p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-amber-900 mb-4">联系我</h2>
+      <p class="text-amber-900/85 mb-6">欢迎联系我进行审计、财务分析、量化研究与商业项目合作。</p>
+      <div class="grid md:grid-cols-2 gap-3">
+        <a href="tel:18948932426" class="rounded-xl border border-amber-200 bg-white/70 p-3 hover:bg-amber-50 transition">
+          电话：189-4893-2426
+        </a>
+        <button id="复制邮箱" class="rounded-xl border border-amber-200 bg-white/70 p-3 text-left hover:bg-amber-50 transition">
+          邮箱：18948932426@163.com（点击复制）
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const 实习数据 = {
+      zh: {
+        职位: "审计实习生",
+        时间: "2025.04 - 2025.06",
+        内容: [
+          "银行流水核查：负责上市公司银行流水完整性与真实性核查，利用 Kutools 和 VLOOKUP 函数对数据进行批量清洗、匹配多银行、跨月份对账数据，剔除内部交易并筛选单笔大额流水，累计完成 <strong>4000+笔流水</strong> 与会计凭证的交叉核验，识别出资金划转异常、账实不符等多项潜在风险点并独立撰写差异分析报告，提出针对性核查建议。",
+          "IPO审计项目底稿：协助审计经理完成应付账款底稿编制，运用FILTER函数进行多条件数据筛选，完成外币测算表、主要材料采购单价对比及月采购分析，并对大额应付款期后支付进行检查。同时，协助审计经理编制试算平衡表和报表附注，深度参与 <strong>IPO审计</strong>。",
+          "资产盘点：负责固定资产与存货现场监盘，执行抽盘、反向抽盘及复盘程序，确保账实相符并撰写监盘小结。"
+        ]
+      },
+      sn: {
+        职位: "审计实习生",
+        时间: "2025.03",
+        内容: [
+          "应收及预收账龄分析：协助编制预收账款、应收账款审计底稿，运用 VLOOKUP, IF 函数构建多期账龄分析模型，结合先进先出法（<strong>FIFO模型</strong>）对往来款项进行账龄精准测算，通过本期回款冲减期初余额，完成坏账准备计提准确性校验与余额勾稽核对，精准识别逾期、长期挂账、回款异常等高风险账款。",
+          "税费审计：协助编制应交税费审计底稿，核对各分公司销项税、进项税等明细数据，完成账面与报表的勾稽校验。"
+        ]
+      },
+      zs: {
+        职位: "证券实习生",
+        时间: "2022.07 - 2022.08",
+        内容: [
+          "ETF 行业与量化分析：协助完成创新药、新能车等 ETF 产品的量化分析，统计价格、成交量与波动率，结合行业景气度梳理收益规律，完成ETF行业研究及销售报告，模拟为投资推荐提供数据支撑。",
+          "协同招商银行开展综合金融服务：跟随招商银行团队外派至合作企业，协助完成企业员工批量办卡业务，负责新客户银行卡绑定、激活及客户信息录入与核对，保障办卡流程高效推进，累计服务客户超 50+ 人次。"
+        ]
+      },
+      xn: {
+        职位: "沙盘助教",
+        时间: "2021.09 - 2022.12",
+        内容: [
+          "制造业经营分析与财务决策实践：参与制造业企业经营沙盘助教项目，围绕产品全周期管理、利润预测模型搭建、财务报表编制与运营决策模块，建立以“业务动作-财务结果”为导向的联动分析框架，深入拆解与解读现金流周转与经营风险。",
+          "课程体系与业务模型：同步参与业务分析课程体系建设，沉淀标准化分析方法论，保障业务模型在教学场景的高效落地。"
+        ]
+      }
+    };
+
+    const 按钮组 = document.querySelectorAll(".经历按钮");
+    const 内容容器 = document.getElementById("经历内容");
+
+    function 渲染经历(键) {
+      const d = 实习数据[键];
+      内容容器.classList.remove("淡入");
+      void 内容容器.offsetWidth;
+      内容容器.classList.add("淡入");
+      内容容器.innerHTML = `
+        <p class="text-sm text-amber-700 mb-4">${d.职位}｜${d.时间}</p>
+        <div class="space-y-3">
+          ${d.内容.map(i => `<p class="leading-7 text-amber-900/90">${i}</p>`).join("")}
+        </div>
+      `;
+    }
+
+    按钮组.forEach(btn => {
+      btn.addEventListener("click", () => {
+        按钮组.forEach(b => {
+          b.classList.remove("经历按钮激活");
+          if (!b.classList.contains("玻璃卡")) b.classList.add("玻璃卡");
+        });
+        btn.classList.add("经历按钮激活");
+        btn.classList.remove("玻璃卡");
+        渲染经历(btn.dataset.key);
+      });
+    });
+    渲染经历("zh");
+
+    const 邮箱按钮 = document.getElementById("复制邮箱");
+    邮箱按钮.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("18948932426@163.com");
+        邮箱按钮.textContent = "邮箱：18948932426@163.com（已复制）";
+        setTimeout(() => {
+          邮箱按钮.textContent = "邮箱：18948932426@163.com（点击复制）";
+        }, 1400);
+      } catch (e) {
+        alert("复制失败，请手动复制邮箱地址。");
+      }
+    });
+  </script>
+</body>
+</html>
